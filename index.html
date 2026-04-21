@@ -3,36 +3,209 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Golden Sphere Solutions LLC</title>
+    <title>ZzzCatcher - 100% Private AI Sleep Monitoring</title>
+    <link rel="icon" type="image/png" href="favicon.png">
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; }
-        header { text-align: center; padding: 40px 0; border-bottom: 1px solid #eaeaea; margin-bottom: 40px; }
-        h1 { margin: 0; color: #0066cc; }
-        h2 { color: #555; }
-        .app-section { background: #f9f9f9; padding: 30px; border-radius: 8px; text-align: center; }
-        footer { margin-top: 50px; text-align: center; font-size: 0.9em; color: #777; border-top: 1px solid #eaeaea; padding-top: 20px; }
-        a { color: #0066cc; text-decoration: none; }
-        a:hover { text-decoration: underline; }
+        :root {
+            --primary-blue: #007AFF;
+            --dark-blue: #0056b3;
+            --bg-light: #f5f7fa;
+            --text-main: #1d1d1f;
+            --text-muted: #86868b;
+        }
+
+        * { box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif; 
+            line-height: 1.5; 
+            color: var(--text-main); 
+            margin: 0; 
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+        /* Navigation */
+        nav { padding: 20px 0; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-weight: 700; font-size: 1.2em; color: var(--primary-blue); text-decoration: none; }
+        .nav-links a { margin-left: 20px; color: var(--text-muted); text-decoration: none; font-size: 0.9em; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--primary-blue); }
+
+        /* Hero Section */
+        .hero { text-align: center; padding: 80px 0; background: linear-gradient(180deg, #fff 0%, var(--bg-light) 100%); }
+        .hero h1 { font-size: 3.5em; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 20px; }
+        .hero p { font-size: 1.4em; color: var(--text-muted); max-width: 700px; margin: 0 auto 40px; }
+        .btn-primary { 
+            display: inline-block; 
+            background: var(--primary-blue); 
+            color: #fff; 
+            padding: 16px 32px; 
+            border-radius: 12px; 
+            font-weight: 600; 
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .btn-primary:hover { background: var(--dark-blue); }
+
+        /* Features Section */
+        .features { padding: 80px 0; }
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title h2 { font-size: 2.5em; font-weight: 700; }
+        
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
+        .feature-card { background: var(--bg-light); padding: 40px; border-radius: 20px; text-align: center; }
+        .feature-card i { font-size: 2.5em; color: var(--primary-blue); margin-bottom: 20px; display: block; }
+        .feature-card h3 { margin-bottom: 15px; font-size: 1.4em; }
+        .feature-card p { color: var(--text-muted); }
+
+        /* Privacy Focus */
+        .privacy-box { 
+            background: #000; 
+            color: #fff; 
+            padding: 60px; 
+            border-radius: 30px; 
+            text-align: center; 
+            margin: 60px 0;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .privacy-box h2 { font-size: 2.5em; margin-bottom: 20px; }
+        .privacy-box p { font-size: 1.2em; opacity: 0.8; max-width: 600px; margin: 0 auto; }
+
+        /* Pricing/Pro Table */
+        .comparison { padding: 80px 0; }
+        table { width: 100%; border-collapse: collapse; margin-top: 40px; }
+        th, td { padding: 20px; text-align: left; border-bottom: 1px solid #eee; }
+        th { font-weight: 700; color: var(--primary-blue); }
+        .check { color: #28a745; font-weight: bold; }
+        .lock { color: #ffc107; }
+
+        /* Footer */
+        footer { padding: 60px 0; text-align: center; color: var(--text-muted); font-size: 0.9em; border-top: 1px solid #eee; }
+        .footer-links { margin-bottom: 20px; }
+        .footer-links a { color: var(--text-muted); text-decoration: none; margin: 0 10px; }
+        .footer-links a:hover { color: var(--primary-blue); }
+        .disclaimer { max-width: 700px; margin: 20px auto 0; font-size: 0.8em; line-height: 1.4; opacity: 0.6; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5em; }
+            .hero p { font-size: 1.1em; }
+        }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Golden Sphere Solutions LLC</h1>
-        <p>Innovative mobile solutions for everyday life.</p>
-    </header>
-
-    <div class="app-section">
-        <h2>ZzzCatcher</h2>
-        <p>Record, track, and analyze your sleep sounds locally and securely on your device.</p>
-        <p>
-            <a href="privacy.html">Privacy Policy</a> | 
-            <a href="support.html">App Support</a>
-        </p>
+    <div class="container">
+        <nav>
+            <a href="#" class="logo">Golden Sphere Solutions</a>
+            <div class="nav-links">
+                <a href="manual.html">User Manual</a>
+                <a href="support.html">Support</a>
+                <a href="privacy.html">Privacy</a>
+            </div>
+        </nav>
     </div>
 
+    <section class="hero">
+        <div class="container">
+            <h1>ZzzCatcher</h1>
+            <p>The most private way to monitor your sleep. Advanced AI snoring and abnormal sound detection that stays 100% on your device.</p>
+            <a href="#" class="btn-primary">Download on the App Store</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why ZzzCatcher?</h2>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>Smart AI Detection</h3>
+                    <p>Uses on-device machine learning to accurately identify snoring while filtering out room noise, sheet rustling, and yawning.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Health Insights</h3>
+                    <p>Detect critical sleep disturbances like coughing or gasping and get detailed nightly summary reports.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Total Privacy</h3>
+                    <p>No clouds. No accounts. Your audio and video never leave your iPhone or iPad. Period.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="privacy-box">
+            <h2>Your Sleep is Private</h2>
+            <p>Unlike other sleep apps, ZzzCatcher processes every sound locally using Apple's Neural Engine. We have zero access to your recordings.</p>
+        </div>
+    </div>
+
+    <section class="comparison">
+        <div class="container">
+            <div class="section-title">
+                <h2>Go Pro for deeper insights</h2>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Free</th>
+                        <th>Pro</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Smart AI Snore Detection</td>
+                        <td><span class="check">✔</span></td>
+                        <td><span class="check">✔</span></td>
+                    </tr>
+                    <tr>
+                        <td>Audio Recording</td>
+                        <td><span class="check">✔</span></td>
+                        <td><span class="check">✔</span></td>
+                    </tr>
+                    <tr>
+                        <td>History Retention</td>
+                        <td>3 Days</td>
+                        <td><strong>30 Days</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Video & Audio Mode</td>
+                        <td>-</td>
+                        <td><span class="check">✔</span></td>
+                    </tr>
+                    <tr>
+                        <td>Nightly Summary Dashboard</td>
+                        <td>-</td>
+                        <td><span class="check">✔</span></td>
+                    </tr>
+                    <tr>
+                        <td>Gasp & Cough Detection</td>
+                        <td>-</td>
+                        <td><span class="check">✔</span></td>
+                    </tr>
+                    <tr>
+                        <td>Export & Share with Doctors</td>
+                        <td>-</td>
+                        <td><span class="check">✔</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
     <footer>
-        &copy; 2026 Golden Sphere Solutions LLC. All rights reserved.
+        <div class="container">
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="support.html">App Support</a>
+            </div>
+            <p>&copy; 2026 Golden Sphere Solutions LLC. All rights reserved.</p>
+            <p class="disclaimer">Medical Disclaimer: ZzzCatcher is for informational purposes only and is not a medical device. It cannot diagnose Sleep Apnea or any other medical condition. If you are concerned about your sleep health, please consult a qualified healthcare professional.</p>
+        </div>
     </footer>
 
 </body>
